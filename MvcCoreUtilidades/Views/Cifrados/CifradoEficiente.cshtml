@@ -1,14 +1,14 @@
-﻿<h1>Cifrado básico</h1>
+﻿<h1 style="color: fuchsia">Cifrado Eficiente</h1>
 <form method="post">
     <label>Contenido a cifrar</label>
     <input type="text" name="contenido" class="form-control" />
     <label>Resultado:</label>
     <textarea type="text" name="resultado" rows="5" class="form-control">@ViewData["TEXTOCIFRADO"]</textarea>
-    <button class="btn btn-info" name="accion" value="cifrar">
+    <button class="btn btn-success" name="accion" value="cifrar">
         Cifrar contenido
     </button>
-    <button class="btn btn-danger" name="accion" value="comparar">
+    <button class="btn btn-warning" name="accion" value="comparar">
         Comparar contenido
     </button>
-    <h1 style="color:blue">@ViewData["MENSAJE"]</h1>
+    @Html.Raw(@ViewData["MENSAJE"])
 </form>
