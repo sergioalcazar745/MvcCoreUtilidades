@@ -1,0 +1,29 @@
+﻿@model List<Coche>
+
+<h1>Vista Parcial</h1>
+
+<div class="spinner-border" role="status" id="spinner">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<table class="d-none table table-bordered" id="tabla">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Imagen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Coche coche in Model)
+        {
+            <tr>
+                <td>@coche.IdCoche</td>
+                <td>@coche.Marca</td>
+                <td>@coche.Modelo</td>
+                <td><img src="@coche.Imagen" width="150" height="150"/></td>
+            </tr>
+        }
+    </tbody>
+</table>

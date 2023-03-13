@@ -1,0 +1,13 @@
+﻿@model List<Coche>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu coches
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (Coche coche in Model)
+        {
+            <li><a asp-controller="Coches" asp-action="Details" asp-route-idcoche="@coche.IdCoche" class="dropdown-item">@coche.Marca</a></li>
+        }
+    </ul>
+</div>

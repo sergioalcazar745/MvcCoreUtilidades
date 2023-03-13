@@ -13,6 +13,24 @@ namespace MvcCoreUtilidades.Controllers
             _logger = logger;
         }
 
+        [HttpPost]
+        public IActionResult Login(string usuario)
+        {
+            HttpContext.Session.SetString("USUARIO", usuario);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        public IActionResult CerrarSesion()
+        {
+            HttpContext.Session.Remove("USUARIO");
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Index()
         {
             return View();
